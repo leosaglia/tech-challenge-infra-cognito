@@ -17,6 +17,10 @@ resource "aws_cognito_user_pool" "user_pool" {
     email_configuration {
         email_sending_account = "COGNITO_DEFAULT"
     }
+
+    admin_create_user_config {
+        allow_admin_create_user_only = true
+    }
 }
 
 resource "aws_cognito_user_pool_domain" "cognito_domain" {
